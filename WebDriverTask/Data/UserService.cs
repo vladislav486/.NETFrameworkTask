@@ -26,7 +26,7 @@ namespace WebDriverTask.Data
                         return new UserEntity()
                         {
                             UserName = "m.charlingston@yandex.ru",
-                            Password = "159456test"
+                            Password = "159456tesT"
                         };
                         break;
                     }

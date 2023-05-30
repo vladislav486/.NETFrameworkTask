@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium.DevTools.V108.Browser;
+﻿using OpenQA.Selenium.DevTools;
 using System;
 using System.Collections.Generic;
 using System.Linq;

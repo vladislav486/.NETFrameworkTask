@@ -16,7 +16,7 @@ namespace WebDriverTask.Tests
         public void VerifyLogin()
         {
             //Arrange
-            var user = UserService.GetUser("Harry");
+            var user = UserService.GetUser("Marry");
 
             //Action
             MailHomePageSteps.GoToPage();

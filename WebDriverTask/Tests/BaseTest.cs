@@ -1,27 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework.Interfaces;
+using OpenQA.Selenium;
+using Protractor;
 using WebDriverTask.SeleniumWebDriver;
+
+
 
 namespace WebDriverTask.Tests
 {
     [TestFixture]
     public class BaseTest
     {
-        private DriverInstance _driver;
-
         [OneTimeSetUp]
         public void BeforeTest() 
         {
-            _driver = new DriverInstance();
+            DriverInstance.GetInstance();
         }
 
-        [OneTimeTearDown]
-        public void AfterTest() 
+
+        [TearDown]
+        public void TearDown()
         {
+            TakeScreenshotDefaultImageFormat();
             DriverInstance.CloseBrowser();
+        }
+        public void TakeScreenshotDefaultImageFormat()
+        {
+
+            if (TestContext.CurrentContext.Result.Outcome == ResultState.Error)
+            {
+                var screenshot = ((ITakesScreenshot)DriverInstance.GetInstance()).GetScreenshot();
+                var screenshotDirectoryPath = Path.Combine(TestContext.CurrentContext.TestDirectory, "c:\\Screenshots\\");
+                if (!Directory.Exists(screenshotDirectoryPath))
+                {
+                    Directory.CreateDirectory(screenshotDirectoryPath);
+                }
+                var currentDate = DateTime.Now;
+                var filePath = $"{screenshotDirectoryPath}{TestContext.CurrentContext.Test.Name}_{currentDate.ToString("yyyy.MM.dd-HH.mm.ss")}.png";
+                screenshot.SaveAsFile(filePath);
+                TestContext.AddTestAttachment(filePath);
+            }
         }
     }
 }
