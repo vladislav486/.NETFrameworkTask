@@ -13,10 +13,10 @@ namespace WebDriverTask.Tests
     internal class MailLoginTest : BaseTest
     {
         [Test]
-        public void VerifyLogin()
+        public void MailVerifyLogin()
         {
             //Arrange
-            var user = UserService.GetUser("Marry");
+            var user = UserService.GetUser("Harry");
 
             //Action
             MailHomePageSteps.GoToPage();

@@ -12,7 +12,7 @@ namespace WebDriverTask.Tests
     internal class MailSendEmailTest : BaseTest
     {
         [Test]
-        public void SendEmailToAnotherUser()
+        public void SendEmailToYandexUser()
         {
             //Arrange
             var user = UserService.GetUser("Harry");

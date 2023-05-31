@@ -12,7 +12,7 @@ namespace WebDriverTask.Tests
     {
         [Test]
 
-        public void VerifyLogin() 
+        public void YandexVerifyLogin() 
         {
             //Arrange
             var user = UserService.GetUser("Marry");
