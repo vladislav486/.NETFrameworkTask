@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebDriverTask.SeleniumWebDriver;
 
 namespace WebDriverTask.PageObject
@@ -11,7 +6,6 @@ namespace WebDriverTask.PageObject
     internal class MailBoxPage
     {
         public IWebElement SendEmailButton => DriverInstance.GetInstance().FindElement(By.XPath("//span[@class='compose-button__txt']"));
-      //  public IWebElement MailBoxIFrame => DriverInstance.GetInstance().FindElement(By.XPath("//div[contains(@class,'app_popup')]"));
         public IWebElement AdressField => DriverInstance.GetInstance().FindElement(By.XPath("//input[contains(@class,'container--H9L5q') and @style]"));
         public IWebElement SubjectField => DriverInstance.GetInstance().FindElement(By.XPath("//input[@name= 'Subject']"));
         public IWebElement TextField => DriverInstance.GetInstance().FindElement(By.XPath("//div[@role='textbox']"));

@@ -1,19 +1,13 @@
-﻿using Microsoft.Extensions.Options;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+
 
 namespace WebDriverTask.SeleniumWebDriver
 {
     public class DriverInstance
     {
-        private static IWebDriver _driver;
-
+        private static IWebDriver? _driver;
 
         public static IWebDriver GetInstance() 
         {
@@ -21,6 +15,7 @@ namespace WebDriverTask.SeleniumWebDriver
             {
                 _driver = new ChromeDriver();
                 _driver.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(10));
+                _driver.Manage().Window.Size = new Size(1920, 1080);
                 _driver.Manage().Window.Maximize();
             }
             return _driver;
@@ -38,7 +33,7 @@ namespace WebDriverTask.SeleniumWebDriver
         }
         public static void CloseBrowser() 
         {
-            _driver.Quit();
+            _driver?.Quit();
             _driver = null;
         }
     }

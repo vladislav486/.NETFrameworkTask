@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
-using Protractor;
 using WebDriverTask.SeleniumWebDriver;
 
 

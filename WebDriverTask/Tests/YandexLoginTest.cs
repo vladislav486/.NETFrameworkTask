@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebDriverTask.Data;
+﻿using WebDriverTask.Data;
 using WebDriverTask.Steps;
 
 namespace WebDriverTask.Tests

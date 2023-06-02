@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebDriverTask.SeleniumWebDriver;
 
 namespace WebDriverTask.PageObject
@@ -17,7 +12,7 @@ namespace WebDriverTask.PageObject
         {
             public EmailItem(IWebElement _container)
             {
-                Container= _container;
+                Container = _container;
             }
 
             public IWebElement Container;
