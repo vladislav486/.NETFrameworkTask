@@ -13,9 +13,13 @@ namespace WebDriverTask.SeleniumWebDriver
         {
             if (_driver == null)
             {
+                var chromeOption = new ChromeOptions();
+                chromeOption.AddArgument("headless");
                 _driver = new ChromeDriver();
                 _driver.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(10));
-                _driver.Manage().Window.Size = new Size(1920, 1080);
+                //((IJavaScriptExecutor)_driver).ExecuteScript("window.resizeTo(1920,1080);");
+                //_driver.Manage().Window.Size = new Size(1920, 1080);
+                _driver.Manage().Window.Maximize();
             }
             return _driver;
         }
